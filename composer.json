@@ -1,6 +1,6 @@
 {
     "name": "wannabe-pro/composer-release-plugin-zip",
-    "type": "composer-plugin",
+    "type": "library",
     "version": "0.0.1",
     "description": "ZIP release builder",
     "keywords": [
