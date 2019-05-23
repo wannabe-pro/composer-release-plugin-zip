@@ -1,4 +1,4 @@
-ZIP package builder extension for (`wannabe-pro/composer-release-plugin`)[https://github.com/wannabe-pro/composer-release-plugin].
+ZIP package builder extension for [`wannabe-pro/composer-release-plugin`](https://github.com/wannabe-pro/composer-release-plugin).
 The name of build define target ZIP-file.
 
 ```json
