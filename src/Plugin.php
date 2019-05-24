@@ -1,15 +1,16 @@
 <?php
 
-namespace WannaBePro\Composer\Plugin\Release;
+namespace WannaBePro\Composer\Plugin\Release\Zip;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
+use WannaBePro\Composer\Plugin\Release\Plugin as ReleasePlugin;
 
 /**
  * Plugin ZIP builder.
  */
-class PluginZipBuilder implements PluginInterface
+class Plugin implements PluginInterface
 {
     /**
      * Activate plugin.
@@ -19,6 +20,6 @@ class PluginZipBuilder implements PluginInterface
      */
     public function activate(Composer $composer, IOInterface $io)
     {
-        Plugin::addBuilder(ZipBuilder::class);
+        ReleasePlugin::addBuilder(Builder::class);
     }
 }

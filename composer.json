@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WannaBePro\\Composer\\Plugin\\Release\\": "src"
+            "WannaBePro\\Composer\\Plugin\\Release\\Zip": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WannaBePro\\Composer\\Plugin\\Release\\": "tests"
+            "WannaBePro\\Composer\\Plugin\\Release\\Zip": "tests"
         }
     },
     "minimum-stability": "dev",
@@ -44,7 +44,7 @@
         "phpunit/phpunit": "^4.8.36"
     },
     "extra": {
-        "class": "WannaBePro\\Composer\\Plugin\\Release\\PluginZipBuilder"
+        "class": "WannaBePro\\Composer\\Plugin\\Release\\Zip\\Plugin"
     },
     "config": {
         "optimize-autoloader": true

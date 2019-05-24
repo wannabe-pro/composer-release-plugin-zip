@@ -1,6 +1,6 @@
 <?php
 
-namespace WannaBePro\Composer\Plugin\Release;
+namespace WannaBePro\Composer\Plugin\Release\Zip;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 

@@ -9,7 +9,7 @@ The name of build define target ZIP-file.
     "extra": {
         "build-plugin": {
             "builder/package.zip": {
-                "builder": "WannaBePro\\Composer\\Plugin\\Release\\ZipBuilder",
+                "builder": "zip",
                 "composer": {},
                 "mapper": {}
             }

@@ -1,15 +1,16 @@
 <?php
 
-namespace WannaBePro\Composer\Plugin\Release;
+namespace WannaBePro\Composer\Plugin\Release\Zip;
 
 use Composer\Util\Filesystem;
 use Traversable;
 use ZipArchive;
+use WannaBePro\Composer\Plugin\Release\Builder as BaseBuilder;
 
 /**
  * Zip builder.
  */
-class ZipBuilder extends Builder
+class Builder extends BaseBuilder
 {
     /**
      * @inheritDoc
