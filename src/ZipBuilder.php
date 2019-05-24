@@ -2,6 +2,7 @@
 
 namespace WannaBePro\Composer\Plugin\Release;
 
+use Composer\Util\Filesystem;
 use Traversable;
 use ZipArchive;
 
@@ -15,21 +16,24 @@ class ZipBuilder extends Builder
      */
     public function build(Traversable $files, $update = false)
     {
-		(new Filesystem())->ensureDirectoryExists(dirname($this->name));
-        $zip = new ZipArchive();
-        if ($zip->open($this->name, ZipArchive::CREATE | ZipArchive::OVERWRITE)) {
-            foreach ($files as $from => $to) {
-                $path = $this->getZipPath($to);
-                if ($zip->addFile($from, $path)) {
-                    $this->io->write("Add file {$from} as {$path} in archive.");
-                } else {
-                    $this->io->writeError("Error on append file {$from} as {$path} in archive .");
-                    break;
+        if (iterator_count($files) > 0) {
+            $this->io->write("Build {$this->name}");
+            (new Filesystem())->ensureDirectoryExists(dirname($this->name));
+            $zip = new ZipArchive();
+            if ($zip->open($this->name, ZipArchive::CREATE | ZipArchive::OVERWRITE)) {
+                foreach ($files as $from => $to) {
+                    $path = $this->getZipPath($to);
+                    if ($zip->addFile($from, $path)) {
+                        $this->io->write("Add file {$from} as {$path} in archive.");
+                    } else {
+                        $this->io->writeError("Error on append file {$from} as {$path} in archive .");
+                        break;
+                    }
                 }
+                $zip->close();
+            } else {
+                $this->io->writeError("Zip archive {$this->name} was not writable.");
             }
-            $zip->close();
-        } else {
-            $this->io->writeError("Zip archive {$this->name} was not writable.");
         }
     }
 
