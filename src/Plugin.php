@@ -20,6 +20,6 @@ class Plugin implements PluginInterface
      */
     public function activate(Composer $composer, IOInterface $io)
     {
-        ReleasePlugin::addBuilder(Builder::class);
+        ReleasePlugin::addBuilder('zip', Builder::class);
     }
 }
