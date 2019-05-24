@@ -18,10 +18,10 @@ class Builder extends BaseBuilder
     public function build(Traversable $files, $update = false)
     {
         if (iterator_count($files) > 0) {
-            $this->io->write("Build {$this->name}:");
-            (new Filesystem())->ensureDirectoryExists(dirname($this->name));
+            $this->io->write("Build {$this->target}:");
+            (new Filesystem())->ensureDirectoryExists(dirname($this->target));
             $zip = new ZipArchive();
-            if ($zip->open($this->name, ZipArchive::CREATE | ZipArchive::OVERWRITE)) {
+            if ($zip->open($this->target, ZipArchive::CREATE | ZipArchive::OVERWRITE)) {
                 foreach ($files as $from => $to) {
                     $path = $this->getZipPath($to);
                     if ($zip->addFile($from, $path)) {
@@ -33,10 +33,10 @@ class Builder extends BaseBuilder
                 }
                 $zip->close();
             } else {
-                $this->io->writeError("Zip archive {$this->name} was not writable.");
+                $this->io->writeError("Zip archive {$this->target} was not writable.");
             }
         } else {
-            $this->io->writeError("No files found for {$this->name}.");
+            $this->io->writeError("No files found for {$this->target}.");
         }
     }
 
