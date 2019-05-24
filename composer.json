@@ -1,6 +1,6 @@
 {
     "name": "wannabe-pro/composer-release-plugin-zip",
-    "type": "composer-plugin",
+    "type": "library",
     "version": "0.0.1",
     "description": "ZIP release builder",
     "keywords": [
@@ -42,9 +42,6 @@
     "require-dev": {
         "composer/composer": "1.0.*@dev",
         "phpunit/phpunit": "^4.8.36"
-    },
-    "extra": {
-        "class": "WannaBePro\\Composer\\Plugin\\Release\\Plugin"
     },
     "config": {
         "optimize-autoloader": true
