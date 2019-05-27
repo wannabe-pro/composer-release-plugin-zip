@@ -17,6 +17,7 @@ class Builder extends BaseBuilder
      */
     public function build(Traversable $files, $update = false)
     {
+        $this->getInstaller($update)->run();
         if (iterator_count($files) > 0) {
             $this->io->write("Build {$this->target}:");
             (new Filesystem())->ensureDirectoryExists(dirname($this->target));
