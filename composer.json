@@ -1,4 +1,5 @@
 {
+    "abandoned": true,
     "name": "wannabe-pro/composer-release-plugin-zip",
     "type": "composer-plugin",
     "version": "0.0.1",
