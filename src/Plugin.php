@@ -22,4 +22,26 @@ class Plugin implements PluginInterface
     {
         ReleasePlugin::addBuilder('zip', Builder::class);
     }
+
+    /**
+     * Deactivate plugin.
+     *
+     * @param Composer $composer
+     * @param IOInterface $io
+     */
+    public function deactivate(Composer $composer, IOInterface $io)
+    {
+        // NOTHING TO OD HERE
+    }
+
+    /**
+     * Uninstall plugin.
+     *
+     * @param Composer $composer
+     * @param IOInterface $io
+     */
+    public function uninstall(Composer $composer, IOInterface $io)
+    {
+        // NOTHING TO OD HERE
+    }
 }
